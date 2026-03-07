@@ -1,28 +1,975 @@
-body{
-    font-family: sans-serif;
+body {
+
     margin: 0;
-    background: #f5f5f5;
+    font-family: sans-serif;
+
+}
+
+/* ヒーロー */
+
+.hero {
+
+    height: 100vh;
+
+    background-image: url("../images/haikei.webp");
+
+    background-size: cover;
+    background-position: center 10%;
+
+    position: relative;
+
+}
+
+/* 暗いオーバーレイ */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.35);
+
+}
+
+/* ナビ */
+
+.navbar {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 20px 0;
+
+    background: rgba(0, 0, 0, 0.35);
+
     text-align: center;
+
+    z-index: 3;
+
 }
 
-h1{
-    background: #2c3e50;
+.navbar a {
+
     color: white;
-    padding: 20px;
-}
 
-nav{
-    background: #34495e;
-    padding: 10px;
-}
+    margin: 0 25px;
 
-nav a{
-    color: white;
     text-decoration: none;
-    margin: 10px;
-    font-weight: bold;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
 }
 
-nav a:hover{
-    color: #f1c40f;
+/* 中央 */
+
+.hero-center {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+
+    color: white;
+
+    z-index: 2;
+
+}
+
+/* タイトル */
+
+.title-main {
+
+    font-size: 90px;
+
+    font-family: 'Poppins', sans-serif;
+
+    margin: 0;
+
+}
+
+/* サブ */
+
+.subtitle {
+
+    font-size: 30px;
+
+    font-family: 'Dancing Script', cursive;
+
+    margin-top: 20px;
+
+}
+
+/* ボタン */
+
+.hero-buttons {
+
+    margin-top: 40px;
+
+}
+
+.btn {
+
+    display: inline-block;
+
+    padding: 15px 40px;
+
+    border: 2px solid white;
+
+    border-radius: 40px;
+
+    margin: 10px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    transition: 0.3s;
+
+}
+
+.btn:hover {
+
+    background: white;
+
+    color: black;
+
+}
+
+/* スマホ */
+
+@media (max-width:700px) {
+
+    .title-main {
+
+        font-size: 40px;
+
+    }
+
+    .subtitle {
+
+        font-size: 20px;
+
+    }
+
+    .btn {
+
+        padding: 10px 20px;
+
+    }
+
+}
+
+.hero-content {
+
+    text-align: center;
+
+    color: white;
+
+    margin-top: 50px;
+
+}
+
+
+.hero-content h1 {
+
+    font-size: 80px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.subtitle {
+
+    font-size: 28px;
+
+    font-style: italic;
+
+    margin-bottom: 20px;
+
+}
+
+
+.trip-date {
+
+    font-size: 20px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.9;
+
+}
+
+/*-----------------以下　スケジュール----------------*/
+.page-title {
+
+    text-align: center;
+
+    margin-top: 120px;
+
+    font-size: 40px;
+
+}
+
+
+
+/* カード全体 */
+
+.file-stack {
+
+    position: relative;
+
+    width: 900px;
+
+    margin: 80px auto;
+
+    height: 650px;
+
+}
+
+
+
+/* カード */
+
+.file-card {
+
+    position: absolute;
+
+    width: 100%;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+
+/* 初期位置 */
+
+.file-card:nth-child(1) {
+
+    left: 0;
+    z-index: 3;
+
+}
+
+.file-card:nth-child(2) {
+
+    left: 30px;
+    z-index: 2;
+
+    transform: scale(0.97);
+
+}
+
+.file-card:nth-child(3) {
+
+    left: 60px;
+    z-index: 1;
+
+    transform: scale(0.94);
+
+}
+
+
+
+/* 前に出たカード */
+
+.file-card.active {
+
+    z-index: 10;
+
+    transform: scale(1);
+
+}
+
+
+/* タブ */
+
+.tab {
+
+    position: absolute;
+
+    top: -20px;
+
+    left: 20px;
+
+    padding: 12px 25px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+.yellow {
+    background: #ffd54f;
+}
+
+.blue {
+    background: #64b5f6;
+}
+
+.green {
+    background: #81c784;
+}
+
+
+
+/* タイムライン */
+
+.timeline {
+
+    margin-top: 20px;
+
+}
+
+
+
+/* 予定 */
+
+.timeline-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px;
+
+    border-bottom: 1px dashed #ccc;
+
+    font-size: 18px;
+
+}
+
+
+
+/* 削除 */
+
+.delete-btn {
+
+    border: none;
+
+    background: none;
+
+    font-size: 20px;
+
+    color: #999;
+
+    cursor: pointer;
+
+}
+
+.delete-btn:hover {
+
+    color: red;
+
+}
+
+
+
+/* ＋ライン */
+
+.insert-line {
+
+    text-align: center;
+
+    padding: 10px;
+
+}
+
+.insert-line button {
+
+    border: none;
+
+    background: none;
+
+    font-size: 26px;
+
+    color: #4CAF50;
+
+    cursor: pointer;
+
+}
+
+.insert-line button:hover {
+
+    color: #2e7d32;
+
+}
+
+/*-----------以下お店------------*/
+.shop-list {
+
+    counter-reset: shop;
+
+}
+
+/* カード */
+
+.shop-card {
+
+    counter-increment: shop;
+
+    display: flex;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    margin-bottom: 30px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    position: relative;
+
+}
+
+/* 番号 */
+
+.shop-number::before {
+
+    content: counter(shop);
+
+}
+
+.shop-number {
+
+    position: absolute;
+
+    top: -10px;
+
+    left: -10px;
+
+    background: black;
+
+    color: white;
+
+    width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+
+}
+
+/* 写真 */
+
+.shop-images {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+.shop-images img {
+
+    width: 200px;
+
+    border-radius: 10px;
+
+    object-fit: cover;
+
+}
+
+/* 飲食店 */
+
+.restaurant {
+
+    background: #fff8c4;
+
+}
+
+/* 観光地 */
+
+.sightseeing {
+
+    background: #ffdede;
+
+}
+
+/*-------------メモページ-------------*/
+/* メモボード */
+
+.memo-board {
+
+    width: 90%;
+    margin: 120px auto;
+
+    background: #fdfcf7;
+
+    border: 3px solid #ddd;
+    border-radius: 20px;
+
+    padding: 40px;
+
+}
+
+/* メモ配置 */
+
+.memo-container {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 30px;
+
+    margin-top: 30px;
+
+}
+
+/* 付箋 */
+
+.memo {
+
+    position: relative;
+
+    width: 200px;
+    min-height: 160px;
+
+    background: #fff8a6;
+
+    padding: 30px 20px 25px 20px;
+
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2);
+
+    border-radius: 5px;
+
+}
+
+/* 横線 */
+
+.memo-text {
+
+    outline: none;
+
+    line-height: 1.8;
+
+    background-image:
+        linear-gradient(#ddd 1px, transparent 1px);
+
+    background-size: 100% 28px;
+
+}
+
+/* ピン */
+
+.memo::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 18px;
+    height: 18px;
+
+    background: #d32f2f;
+
+    border-radius: 50%;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+}
+
+/* ピン影 */
+
+.memo::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 17px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 3px;
+    height: 8px;
+
+    background: #444;
+
+    border-radius: 2px;
+
+}
+
+/* 右下折れ */
+
+.memo {
+
+    clip-path: polygon(0 0,
+            100% 0,
+            100% 85%,
+            85% 100%,
+            0 100%);
+
+}
+
+/* 削除ボタン */
+
+.delete-memo {
+
+    position: absolute;
+
+    top: 5px;
+    right: 8px;
+
+    border: none;
+    background: none;
+
+    font-size: 18px;
+
+    color: #999;
+
+    cursor: pointer;
+
+}
+
+.delete-memo:hover {
+
+    color: red;
+
+}
+
+/* 追加ボタン */
+
+.add-memo {
+
+    padding: 10px 20px;
+
+    border: none;
+
+    background: #ffd54f;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+}
+
+/*---------------費用-----------------*/
+/* 入力 */
+
+.budget-input {
+
+    display: flex;
+
+    gap: 10px;
+
+    justify-content: center;
+
+    margin-top: 120px;
+
+}
+
+.budget-input input,
+.budget-input select {
+
+    padding: 8px;
+
+    font-size: 16px;
+
+}
+
+.budget-input button {
+
+    padding: 8px 20px;
+
+    background: #4CAF50;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+/* 表 */
+
+.budget-table {
+
+    width: 70%;
+
+    margin: 40px auto;
+
+    border-collapse: collapse;
+
+}
+
+.budget-table th,
+.budget-table td {
+
+    border: 1px solid #ddd;
+
+    padding: 10px;
+
+    text-align: center;
+
+}
+
+.budget-table th {
+
+    background: #f5f5f5;
+
+}
+
+/* 合計 */
+
+.total {
+
+    text-align: center;
+
+    margin-top: 30px;
+
+}
+
+/*----------------------------*/
+.page-title {
+
+    text-align: center;
+
+    margin-top: 120px;
+
+    font-size: 48px;
+
+    color: white;
+
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+}
+
+/* スケジュール */
+
+.schedule-page {
+
+    background-image: url("../images/nagoya.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+}
+
+
+/* お店 */
+
+.shop-page {
+
+    background-image: url("../images/ogura.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+}
+
+
+/* メモ */
+
+.memo-page {
+
+    background-image: url("../images/syachi.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+}
+
+
+/* 費用 */
+
+.budget-page {
+
+    background-image: url("../images/note.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+}
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    z-index: -1;
+
+}
+
+
+
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    margin: 0 25px;
+
+    font-size: 18px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 3px solid transparent;
+
+    transition: 0.3s;
+
+}
+
+nav a:hover {
+
+    border-bottom: 3px solid #ffd54f;
+
+}
+
+nav a.active {
+
+    color: #ffd54f;
+
+}
+
+.shop-card {
+
+    position: relative;
+
+}
+
+.shop-input {
+
+    width: 90%;
+
+    margin: 40px auto;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+.shop-input input,
+.shop-input select {
+
+    padding: 8px;
+
+    font-size: 14px;
+
+}
+
+.shop-input button {
+
+    padding: 8px 20px;
+
+    background: #4CAF50;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+.delete-shop {
+
+    position: absolute;
+
+    top: 8px;
+
+    right: 10px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 20px;
+
+    color: #aaa;
+
+    cursor: pointer;
+
+}
+
+.delete-shop:hover {
+
+    color: red;
+
 }

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>旅行予定</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+<body class="schedule-page">
+
+
+    <nav class="navbar">
+
+        <a href="../index.html">ホーム</a>
+        <a href="schedule.html" class="active">予定</a>
+        <a href="shop.html">お店</a>
+        <a href="memo.html">メモ</a>
+        <a href="budget.html">費用</a>
+
+    </nav>
+
+
+    <h1 class="page-title">旅行スケジュール</h1>
+
+
+    <div class="file-stack">
+
+
+        <!-- Day1 -->
+
+        <div class="file-card active" onclick="openDay(0)">
+
+            <div class="tab yellow" onclick="openDay(0)">Day1</div>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <span contenteditable="true">8:00 集合</span>
+
+                    <button class="delete-btn" onclick="deleteSchedule(event)">×</button>
+
+                </div>
+
+
+                <div class="insert-line">
+                    <button onclick="insertSchedule(this)">＋</button>
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <span contenteditable="true">11:00 名古屋城</span>
+
+                    <button class="delete-btn" onclick="deleteSchedule(event)">×</button>
+
+                </div>
+
+
+                <div class="insert-line">
+                    <button onclick="insertSchedule(this)">＋</button>
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <span contenteditable="true">13:00 ひつまぶし</span>
+
+                    <button class="delete-btn" onclick="deleteSchedule(event)">×</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Day2 -->
+
+        <div class="file-card" onclick="openDay(1)">
+
+            <div class="tab blue" onclick="openDay(1)">Day2</div>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <span contenteditable="true">9:00 モーニング</span>
+
+                    <button class="delete-btn" onclick="deleteSchedule(event)">×</button>
+
+                </div>
+
+
+                <div class="insert-line">
+                    <button onclick="insertSchedule(this)">＋</button>
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <span contenteditable="true">12:00 レゴランド</span>
+
+                    <button class="delete-btn" onclick="deleteSchedule(event)">×</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Day3 -->
+
+        <div class="file-card" onclick="openDay(2)">
+
+            <div class="tab green" onclick="openDay(2)">Day3</div>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <span contenteditable="true">10:00 カフェ</span>
+
+                    <button class="delete-btn" onclick="deleteSchedule(event)">×</button>
+
+                </div>
+
+
+                <div class="insert-line">
+                    <button onclick="insertSchedule(this)">＋</button>
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <span contenteditable="true">15:00 帰宅</span>
+
+                    <button class="delete-btn" onclick="deleteSchedule(event)">×</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="../js/schedule.js"></script>
+
+
+</body>
+
+</html>

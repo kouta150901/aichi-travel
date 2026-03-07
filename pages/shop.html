@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>お店・観光地</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body class="shop-page">
+
+
+    <nav class="navbar">
+
+        <a href="../index.html">ホーム</a>
+        <a href="schedule.html">予定</a>
+        <a href="shop.html" class="active">お店</a>
+        <a href="memo.html">メモ</a>
+        <a href="budget.html">費用</a>
+
+    </nav>
+
+
+
+    <h1 class="page-title">お店 & 観光地</h1>
+
+
+
+    <!-- マップ -->
+
+    <div class="map-area">
+
+        <iframe src="https://www.google.com/maps?q=名古屋&output=embed">
+        </iframe>
+
+    </div>
+
+    <div class="shop-input">
+
+        <input id="shopName" placeholder="店名">
+
+        <select id="shopType">
+            <option value="restaurant">飲食店</option>
+            <option value="sightseeing">観光地</option>
+        </select>
+
+        <input id="shopMenu" placeholder="メニュー / 見どころ">
+
+        <input id="shopPrice" placeholder="価格 / 料金">
+
+        <input id="shopAddress" placeholder="住所">
+
+        <input id="shopTime" placeholder="営業時間">
+
+        <input id="shopImage" placeholder="画像URL">
+
+        <button id="addBtn">追加</button>
+
+    </div>
+
+    <div class="shop-list" id="shopList"></div>
+
+
+
+    <div class="shop-list" id="shopList">
+
+
+
+        <!-- 矢場とん -->
+
+        <div class="shop-card restaurant">
+
+            <div class="shop-number">①</div>
+
+            <img src="../images/yabaton.jpg" class="shop-img">
+
+            <div class="shop-info">
+
+                <h2>矢場とん</h2>
+
+                <p><b>有名メニュー</b>：味噌カツ</p>
+
+                <p><b>価格帯</b>：¥1200〜2000</p>
+
+                <p><b>住所</b>：名古屋市中区大須3-6-18</p>
+
+                <p><b>営業時間</b>：11:00〜21:00</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 山ちゃん -->
+
+        <div class="shop-card restaurant">
+
+            <div class="shop-number">②</div>
+
+            <img src="../images/yamachan.jpg" class="shop-img">
+
+            <div class="shop-info">
+
+                <h2>世界の山ちゃん</h2>
+
+                <p><b>有名メニュー</b>：幻の手羽先</p>
+
+                <p><b>価格帯</b>：¥1000〜3000</p>
+
+                <p><b>住所</b>：名古屋市中村区椿町</p>
+
+                <p><b>営業時間</b>：17:00〜24:00</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 蓬莱軒 -->
+
+        <div class="shop-card restaurant">
+
+            <div class="shop-number">③</div>
+
+            <img src="../images/houraiken.jpg" class="shop-img">
+
+            <div class="shop-info">
+
+                <h2>あつた蓬莱軒</h2>
+
+                <p><b>有名メニュー</b>：ひつまぶし</p>
+
+                <p><b>価格帯</b>：¥4000〜5000</p>
+
+                <p><b>住所</b>：名古屋市熱田区神戸町503</p>
+
+                <p><b>営業時間</b>：11:30〜14:30 / 16:30〜20:30</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 名古屋城 -->
+
+        <div class="shop-card sightseeing">
+
+            <div class="shop-number">④</div>
+
+            <img src="../images/nagoya-castle.jpg" class="shop-img">
+
+            <div class="shop-info">
+
+                <h2>名古屋城</h2>
+
+                <p><b>見どころ</b>：金のシャチホコ</p>
+
+                <p><b>料金</b>：500円</p>
+
+                <p><b>住所</b>：名古屋市中区本丸</p>
+
+                <p><b>営業時間</b>：9:00〜16:30</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 金シャチ横丁 -->
+
+        <div class="shop-card sightseeing">
+
+            <div class="shop-number">⑤</div>
+
+            <img src="../images/kinshachi.jpg" class="shop-img">
+
+            <div class="shop-info">
+
+                <h2>金シャチ横丁</h2>
+
+                <p><b>内容</b>：名古屋めしグルメエリア</p>
+
+                <p><b>住所</b>：名古屋市中区三の丸</p>
+
+                <p><b>営業時間</b>：10:30〜17:30</p>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>

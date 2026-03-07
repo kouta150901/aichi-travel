@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>費用</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body class="budget-page">
+
+    <nav class="navbar">
+
+        <a href="../index.html">ホーム</a>
+        <a href="schedule.html">予定</a>
+        <a href="shop.html">お店</a>
+        <a href="memo.html">メモ</a>
+        <a href="budget.html" class="active">費用</a>
+
+    </nav>
+
+    <h1 class="page-title">旅行費用</h1>
+
+
+    <div class="budget-input">
+
+        <select id="date">
+
+            <option value="3/8">3/8</option>
+            <option value="3/9">3/9</option>
+            <option value="3/10">3/10</option>
+
+        </select>
+
+        <input id="money" type="number" placeholder="金額">
+
+        <input id="purpose" type="text" placeholder="用途">
+
+        <button onclick="addExpense()">追加</button>
+
+    </div>
+
+
+    <table class="budget-table">
+
+        <thead>
+
+            <tr>
+                <th></th>
+                <th>日付</th>
+                <th>金額</th>
+                <th>用途</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="budget-body">
+
+        </tbody>
+
+    </table>
+
+
+    <h2 class="total">合計：¥<span id="total">0</span></h2>
+
+
+    <script src="../js/budget.js"></script>
+
+</body>
+
+</html>

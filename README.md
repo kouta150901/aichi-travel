@@ -22,3 +22,6 @@
 
 ## 動作環境
 Google Chromeなどの主要なWebブラウザで動作します。
+
+# URL
+https://kouta150901.github.io/aichi-travel/
